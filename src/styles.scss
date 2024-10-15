@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import "bootstrap/scss/bootstrap-grid";
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+
+input[type="text"], input[type="password"], input[type="date"], input[type="email"] {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="email"]:focus {
+    outline: none;
+    border-bottom: 1px solid #555;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background-color: #4c4ace;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: #236f25;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #3f3f3f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-pop {
+    border-bottom: 1px solid black;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}

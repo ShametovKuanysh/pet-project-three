@@ -1,0 +1,12 @@
+<div class="pt-2">
+    <div *ngIf="chapters && chapters.length > 0; else nochapter">
+        <app-chapter *ngFor="let chapter of chapters" [chapter]="chapter" (reload)="loadChapters()"></app-chapter>
+    </div>
+    <ng-template #nochapter>
+        <p>No chapters found.</p>
+    </ng-template>
+    <button class="btn-chapter" (click)="addChapter()" *ngIf="!open_form">Add chapter</button>
+    <div *ngIf="open_form" class="pt-2">
+        <app-chapter-form (close)="cancelChapter()" [project_id]="project.id"></app-chapter-form>
+    </div>
+</div>

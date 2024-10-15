@@ -1,0 +1,11 @@
+.btn-spec {
+    text-decoration: none;
+    color: #c41916;
+    border: none;
+}
+
+.btn-spec:hover {
+    cursor: pointer;
+    border-bottom: 1px solid #c41916;
+    transition: border-bottom ease-out 1s;
+}

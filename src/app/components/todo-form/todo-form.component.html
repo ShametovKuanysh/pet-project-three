@@ -1,0 +1,38 @@
+<div class="p-3">
+    <form class="form" [formGroup]="todoForm" (ngSubmit)="action()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" formControlName="title" id="title" placeholder="Enter title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" formControlName="description" id="description" placeholder="Enter description" required>
+                </div>
+                <div class="form-group">
+                    <label for="due_to">Due Date</label>
+                    <input type="date" class="form-control" formControlName="due_to" id="due_to">
+                </div>
+                <div class="form-group">
+                    <label for="created_at">Created Date</label>
+                    <input type="date" class="form-control" formControlName="created_at" id="created_at">
+                </div>
+                <div class="form-group">
+                    <label for="closed_at">Closed Date</label>
+                    <input type="date" class="form-control" formControlName="closed_at" id="closed_at">
+                </div>
+                <div>
+                    <label for="is_done" class="me-2">Is Closed?</label>
+                    <input type="checkbox" class="form-check-input" formControlName="is_done" id="is_done">
+                </div>
+                <div>
+                    <button type="submit" [disabled]="todoForm.invalid" class="btn btn-primary">Add Todo</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                asd
+            </div>
+        </div>
+    </form>
+</div>

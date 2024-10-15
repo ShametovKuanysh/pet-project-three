@@ -1,0 +1,18 @@
+<!-- @for (toast of alertService.toasts; track toast) {
+    <ngb-toast
+      [class]="toast.classname"
+      [autohide]="true"
+      [delay]="toast.delay || 5000"
+      (hidden)="alertService.remove(toast)"
+    >
+      <p>{{toast.message}}</p>
+    </ngb-toast>
+} -->
+    
+@for (toast of alertService.toasts; track toast) {
+    <ngb-toast
+        [class]="toast.classname"
+      [header]="'Notification'" [autohide]="true" [delay]="toast.delay || 5000"
+      (hidden)="alertService.remove(toast)"
+    >{{ toast.message }}</ngb-toast>
+  }

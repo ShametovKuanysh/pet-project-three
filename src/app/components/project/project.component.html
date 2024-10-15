@@ -1,0 +1,20 @@
+<div class="p-2"> 
+    <div class="d-flex justify-content-between project-main">
+        <h3 class="project-title">{{project.title}}</h3>
+        <ng-template #popContent>
+            <div>
+                <div class="btn-pop" (click)="updateProject()">Update</div>
+                <div class="btn-pop" (click)="deleteProject()">Delete</div>
+            </div>
+        </ng-template>
+        <button type="button" class="btn-icon" [ngbPopover]="popContent"><i class="bi-three-dots-vertical"></i></button>
+    </div>
+    <div *ngIf="show_form" class="pt-2">
+        <app-project-form (close)="cancel()" [project]="project"></app-project-form>
+    </div>
+    <div class="mt-2">
+        <!-- CHAPTERS -->
+        <app-chapters [project]="project"></app-chapters>
+         <!-- TASKS -->
+    </div>
+</div>

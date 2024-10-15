@@ -1,0 +1,40 @@
+<div class="task">
+    <div class="d-flex">
+        <div class="form-check">
+            <input class="form-check-input" [(ngModel)]="task.is_done" (change)="taskClose()" type="checkbox" value="" id="flexCheckDefault">
+        </div>
+        <div class="w-100 ">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 *ngIf="updAttr != 'title'" (dblclick)="upd('title')">{{task.title}}</h5>
+                <div *ngIf="updAttr == 'title'">
+                    <input type="text" [(ngModel)]="task.title">
+                    <button type="button" class="btn btn-primary btn-sm ms-2" (click)="taskUpdate()">Update</button>
+                    <button type="button" class="btn btn-secondary btn-sm ms-2" (click)="cancel()">Cancel</button>
+                </div>
+                
+                <span class="task-due">{{task.due_date | date}} <i (click)="open(content)" class="bi bi-alarm task-alert"></i></span>
+            </div>
+            
+            <span *ngIf="updAttr != 'description'" (dblclick)="upd('description')">{{task.description}}</span>
+            <div *ngIf="updAttr == 'description'">
+                <textarea class="form-control m-2" [(ngModel)]="task.description"></textarea>
+                <button type="button" class="btn btn-primary btn-sm ms-2" (click)="taskUpdate()">Update</button>
+                <button type="button" class="btn btn-secondary btn-sm ms-2" (click)="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>  
+</div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+	</div>
+    <div class="modal-body">
+        <input type="date" class="form-control" [value]="task.due_date" [(ngModel)]="task.due_date" id="dueDate">
+    </div>
+    <div class="modal-footer">
+		<button type="button" class="btn btn-outline-secondary" (click)="modal.close('save')">Save</button>
+	</div>
+</ng-template>

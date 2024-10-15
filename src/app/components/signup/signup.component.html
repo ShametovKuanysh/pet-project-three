@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center mt-2">
+    <div class="card">
+        <h3 class="card-title text-center m-2">Sign Up</h3>
+        <form class="form p-2" [formGroup]="signupForm" (ngSubmit)="signup()">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" formControlName="password" id="password" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" formControlName="confirmPassword" id="confirmPassword" placeholder="Confirm password">
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Sign Up</button>
+            <p class="mt-2">Already have an account? <a [routerLink]="['login']">Login</a></p>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+.btn-chapter {
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: #c41916;
+    cursor: pointer;
+    display: flex;
+    flex: 1 1 auto;
+    font-size: 14px;
+    font-weight: 700;
+    height: 24px;
+    justify-content: center;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: relative;
+    transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    width: 100%;
+}
+
+.btn-chapter:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.btn-chapter:before, .btn-chapter:after {
+    background-color: #c41916;
+    content: "";
+    display: block;
+    flex: 1 1 auto;
+    height: 1px;
+    opacity: .5;
+}
+
+.btn-chapter:before {
+    margin-right: 1rem;
+}
+
+.btn-chapter:after {
+    margin-left: 1rem;
+}
+

@@ -1,0 +1,10 @@
+<div class="col-md-12 pt-2 pb-2">
+    <a class="btn-spec" (click)="addProject()" *ngIf="!open_form">+ Add project</a>
+    <app-project-form *ngIf="open_form" (close)="closeForm()"></app-project-form>
+</div>
+<div *ngIf="projects && projects.length > 0; else noprojects">
+    <app-project *ngFor="let project of projects" [project]="project" (reload)="loadProjects()"></app-project>
+</div>
+<ng-template #noprojects>
+    <p>No projects found.</p>
+</ng-template>

@@ -1,0 +1,19 @@
+.btn-task {
+    background-color: transparent;
+    border: none;
+}
+
+.task-plus {
+    padding: .2rem;
+    border-radius: 50%;
+    color: #ab4949;
+}
+
+.btn-task:hover .task-plus {
+    background-color: #ab4949;
+    color: white;
+}
+
+.btn-task:hover {
+    color: #ab4949;
+}

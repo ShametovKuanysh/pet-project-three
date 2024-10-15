@@ -1,0 +1,26 @@
+<div class="p-2">
+    <div class="tasks" *ngIf="tasks">
+        <app-task *ngFor="let task of tasks" (reload)="loadTasks()" [task]="task"></app-task>
+    </div>
+    <button type="button" class="btn btn-task" *ngIf="!is_edited" (click)="is_edited = !is_edited"><span class="task-plus"><i class="bi bi-plus"></i></span> Add task</button>
+    <div class="card p-2" *ngIf="is_edited">
+        <form class="form" [formGroup]="taskForm" (ngSubmit)="submit()">
+            <div class="form-group pb-2">
+                <input type="text" class="form-control" formControlName="title" id="title" placeholder="Enter task title">
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <textarea class="form-control" formControlName="description" id="description" rows="2" placeholder="Enter task description"></textarea>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="dueDate">Due Date</label>
+                    <input type="date" class="form-control" formControlName="due_date" id="dueDate">
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary me-2">Add Task</button>
+                    <button type="button" class="btn btn-secondary" (click)="is_edited = !is_edited">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

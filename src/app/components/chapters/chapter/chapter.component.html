@@ -1,0 +1,20 @@
+<div class="chapter"> 
+    <div class="d-flex justify-content-between align-items-center project-main">
+        <h3 class="chapter-title">{{chapter.title}}</h3>
+        <ng-template #popContent2>
+            <div>
+                <div class="btn-pop" (click)="all = !all">Show {{all ? 'open' : 'all'}} tasks</div>
+                <div class="btn-pop" (click)="updateChapter()">Update</div>
+                <div class="btn-pop" (click)="deleteChapter()">Delete</div>
+            </div>
+        </ng-template>
+        <button type="button" class="btn-icon" [ngbPopover]="popContent2"><i class="bi-three-dots-vertical"></i></button>
+    </div>
+    <div *ngIf="show_form" class="pt-2">
+        <app-chapter-form (close)="cancel()" [chapter]="chapter"></app-chapter-form>
+    </div>
+    <div class="mt-2">
+        <app-tasks [chapter]="chapter" [all]="all"></app-tasks>
+         <!-- TASKS -->
+    </div>
+</div>
